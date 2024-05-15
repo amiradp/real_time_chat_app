@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>DP Chat APP</title>
+    <link rel="stylesheet" href="./Style/style.css">
+    <link rel="shortcut icon" href="../../../images/fav-icon.png" type="images/x-icon">
+  </head>
   <body>
     <center><h1>Hello , Welcome to my chat site ! {{request.user}}</h1></center>
     <br>
@@ -9,11 +14,19 @@
     <div
       class="chat__item__container"
       id="id_chat_item_container"
-      style="font-size: 20px"
     >
       <br />
-      <input type="text" id="id_message_send_input" />
-      <button type="submit" id="id_message_send_button">Send Message</button>
+      
+      <div class="send-chat">
+        <input type="text" id="id_message_send_input" placeholder="chat..."/>
+        <button type="submit" id="id_message_send_button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M22 2L11 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
       <br />
       <br />
     </div>
