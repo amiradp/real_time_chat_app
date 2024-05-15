@@ -23,9 +23,15 @@ html
 body
 {
     border-radius: 32px;
-    padding: 120px 120px 0px 120px;
+    padding: 48px 64px 32px 64px;
     margin: auto;
     height: 90%;
     width: 900px;
     background-color: #eff1f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+a{
+    text-decoration: none;
 }

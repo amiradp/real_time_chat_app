@@ -6,10 +6,31 @@
     <link rel="shortcut icon" href="../../../images/fav-icon.png" type="images/x-icon">
   </head>
   <body>
+    <!-- Header -->
+    <header id="header" >
+      <div class="logo">
+        <img src="../../../images/fav-icon.png" alt="DP Chat" draggable="false">
+        <h5>ADP Chat</h5>
+      </div>
+
+      <span>
+        Logout the chat Page 
+        <a href = "{% url 'logout-user' %}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+            <path d="M9.56152 21.2559H5.56152C5.03109 21.2559 4.52238 21.0451 4.14731 20.6701C3.77224 20.295 3.56152 19.7863 3.56152 19.2559V5.25586C3.56152 4.72543 3.77224 4.21672 4.14731 3.84165C4.52238 3.46657 5.03109 3.25586 5.56152 3.25586H9.56152" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16.5615 17.2559L21.5615 12.2559L16.5615 7.25586" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21.5615 12.2559H9.56152" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </span>
+    </header>
+
+    <!-- Welcome Message -->
+    {% if request.user.is_authenticated  %}
     <center><h1>Hello , Welcome to my chat site ! {{request.user}}</h1></center>
     <br>
-    {% if request.user.is_authenticated  %}
-    <center> Logout the chat Page <a href = "{% url 'logout-user' %}">Logout</a></center>
+
+    <!-- Chat Room -->
     {% endif %}
     <div
       class="chat__item__container"
@@ -17,8 +38,9 @@
     >
       <br />
       
-      <div class="send-chat">
-        <input type="text" id="id_message_send_input" placeholder="chat..."/>
+    <!-- Chat Input -->
+      <div class="send-chat" onclick="width:100%">
+        <input type="text" id="id_message_send_input" placeholder="chat..." />
         <button type="submit" id="id_message_send_button">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M22 2L11 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
